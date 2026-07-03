@@ -1,2 +1,3 @@
-// src/version.js (automatically generated)
-export const templateVersion = "v1";
+import { getTemplateVersion } from "./resolveVersions.js";
+
+export const templateVersion = getTemplateVersion();
