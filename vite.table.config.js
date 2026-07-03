@@ -8,7 +8,7 @@ export default {
             entry: "src/table.js",
             name: "KSTable",
             formats: ["umd"],
-            fileName: () => `${maxTemplateVersion}/kstablecomp.js`
+            fileName: () => `${maxTemplateVersion}/kstableonly.js`
         },
         outDir: "public",
         emptyOutDir: false
