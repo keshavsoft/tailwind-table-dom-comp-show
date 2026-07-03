@@ -39,6 +39,21 @@ export function getCompVersion(
     return `${tableVersion}.${templateVersion.slice(1)}`;
 }
 
+export function getEntryPath(
+    tableVersion = getTableVersion(),
+    templateVersion = getTemplateVersion(tableVersion)
+) {
+    return path.join(
+        tableDir,
+        tableVersion,
+        "commands",
+        "table",
+        "template",
+        templateVersion,
+        "entry.js"
+    );
+}
+
 export default function resolveVersions() {
     const tableVersion = getTableVersion();
     const templateVersion = getTemplateVersion(tableVersion);
@@ -46,6 +61,7 @@ export default function resolveVersions() {
     return {
         tableVersion,
         templateVersion,
-        compVersion: getCompVersion(tableVersion, templateVersion)
+        compVersion: getCompVersion(tableVersion, templateVersion),
+        entryPath: getEntryPath(tableVersion, templateVersion)
     };
 }
