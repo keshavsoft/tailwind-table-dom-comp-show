@@ -1,10 +1,7 @@
-import * as entry from "@ks-table-entry";
+import "@ks-table-entry";
 
 (async () => {
-    window.KSTableCompVersion = __KS_COMP_VERSION__;
-    const entryObj = { ...entry };
-    if (entryObj.initShowTable) {
-        window.KSTableComp = window.KSTableComp || {};
-        window.KSTableComp.initShowTable = entryObj.initShowTable;
+    if (window.ks && window.ks.classes && window.ks.classes.tableShowOnly) {
+        window.ks.classes.tableShowOnly.version = __KS_COMP_VERSION__;
     }
 })();
