@@ -102,5 +102,3 @@ class KSAiTableShowOnly {
 window.ks = window.ks || {};
 window.ks.classes = window.ks.classes || {};
 window.ks.classes.tableShowOnly = KSAiTableShowOnly;
-
-export { KSAiTable };

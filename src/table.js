@@ -1,5 +1,5 @@
 const entryModules = import.meta.glob(
-    "../bin/table/*/commands/table/template/*/entry.js"
+    "../bin/table/*/commands/table/template/*/ai.js"
 );
 
 function pickLatestEntry() {
