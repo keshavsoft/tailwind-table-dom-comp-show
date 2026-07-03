@@ -1,13 +1,8 @@
-import fs from "fs";
 import {
     getCompVersion,
     getEntryPath,
     getTemplateVersion
 } from "./src/resolveVersions.js";
-
-if (fs.existsSync("dist")) {
-    fs.rmSync("dist", { recursive: true, force: true });
-}
 
 const maxTemplateVersion = getTemplateVersion();
 
@@ -29,6 +24,6 @@ export default {
             fileName: () => `${maxTemplateVersion}/kstableonly.js`
         },
         outDir: "dist",
-        emptyOutDir: true
+        emptyOutDir: false
     }
 };

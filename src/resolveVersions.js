@@ -43,7 +43,7 @@ export function getEntryPath(
     tableVersion = getTableVersion(),
     templateVersion = getTemplateVersion(tableVersion)
 ) {
-    return path.join(
+    const entryPath = path.join(
         tableDir,
         tableVersion,
         "commands",
@@ -51,6 +51,20 @@ export function getEntryPath(
         "template",
         templateVersion,
         "entry.js"
+    );
+
+    if (fs.existsSync(entryPath)) {
+        return entryPath;
+    }
+
+    return path.join(
+        tableDir,
+        tableVersion,
+        "commands",
+        "table",
+        "template",
+        templateVersion,
+        "ai.js"
     );
 }
 
